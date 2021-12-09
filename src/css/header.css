@@ -1,0 +1,80 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+#header-user-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7209b7;
+  height: 100px;
+  font-family: Ubuntu, Epilogue, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+#logo {
+  width: 100px;
+  height: 85px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+#title {
+  font-family: Ubuntu, Epilogue, sans-serif;
+  font-style: normal;
+  position: absolute;
+  left: 930px;
+  color: #ffffff;
+}
+
+.user-logo {
+  width: 58px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+
+#header-user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 2px 15px;
+  background-color: #ffffff;
+  color: #7209b7;
+}
+
+#header-links {
+ display: flex;
+ width: 100%;
+ justify-content: space-between; 
+ background-color: #4361ee;
+ font-family: Ubuntu, Epilogue, sans-serif;
+ font-style: normal;
+ font-weight: bold;
+ font-size: 25px;
+ line-height: 29px;
+}
+
+.header-link {
+  padding: 0 239px;
+  border-right: 1px solid white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.header-link:hover {
+  background-color: #4895ef;
+}
+
+.link-decoration {
+  text-decoration: none;
+  color: #ffffff;
+}
