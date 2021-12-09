@@ -15,7 +15,7 @@ describe('1 - Crie as rotas necessárias para a aplicação', () => {
   it('Será validado que rota / é uma rota existente e que ela renderiza com data-testid page-login ser acessada',
     async () => {
       localStorage.clear();
-      renderPath("/");
+      renderPath("/trybetunes-project");
 
       await waitFor(
         () => expect(screen.queryAllByText('Carregando...')).toHaveLength(0),
