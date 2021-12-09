@@ -9,7 +9,7 @@ header {
   align-items: center;
   background-color: #7209b7;
   height: 100px;
-  font-family: Ubuntu, Epilogue, sans-serif;
+  font-family: Epilogue, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -24,7 +24,7 @@ header {
 }
 
 #title {
-  font-family: Ubuntu, Epilogue, sans-serif;
+  font-family: Epilogue, sans-serif;
   font-style: normal;
   position: absolute;
   left: 930px;
@@ -40,6 +40,7 @@ header {
 }
 
 #header-user-info {
+  min-width: 150px;
   display: flex;
   align-items: center;
   margin-right: 40px;
@@ -55,10 +56,10 @@ header {
  width: 100%;
  justify-content: space-between; 
  background-color: #4361ee;
- font-family: Ubuntu, Epilogue, sans-serif;
+ font-family: Epilogue, sans-serif;
  font-style: normal;
  font-weight: bold;
- font-size: 25px;
+ font-size: 24px;
  line-height: 29px;
 }
 
