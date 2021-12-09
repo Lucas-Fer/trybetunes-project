@@ -17,8 +17,30 @@ export default class Header extends Component {
   }
 
   componentDidMount() {
+    this.handleMount();
+  }
+
+  componentDidUpdate() {
+    this.handleMount();
+  }
+
+  handleMount = () => {
     userApi.getUser()
-      .then(({ name, image }) => this.setState({ userInfo: name, image: image,loading: false }));
+      .then(({ name, image }) => {
+        this.setState({ userInfo: name, image: image, loading: false });
+        if (!image) this.handleNotImage();
+        if (!name) this.handleNotName();
+      });
+  }
+
+  handleNotImage = () => {
+    const noImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEVdufczZfY6ufE_-iVlv-fQh_jRY7f2c-3Q&usqp=CAU'
+    this.setState({image: noImage})
+  }
+
+  handleNotName = () => {
+    const notUser = 'Usuário(a)'
+    this.setState({userInfo: notUser})
   }
 
   render() {
@@ -35,41 +57,35 @@ export default class Header extends Component {
           {loading ? (
             <LoadingMessage />
           ) : (
-              <span
-                id="header-user-info"
-                data-testid="header-user-name">
-                <img
-                  src={image}
-                  className="user-logo"
-                  alt="perfil-user"
-                />
-                {userInfo}
+            <span
+              id="header-user-info"
+              data-testid="header-user-name">
+              <img
+                src={image}
+                className="user-logo"
+                alt="perfil-user"
+              />
+              {userInfo}
             </span>
           )}
         </div>
 
         <div id="header-links">
-          <div className="header-link">
-            <Link
-              className="link-decoration"
-              data-testid="link-to-favorites"
-              to="/favorites">Músicas favoritas
-            </Link>
-          </div>
-          <div className="header-link">
-            <Link
-              className="link-decoration"
-              data-testid="link-to-search"
-              to="/search">Pesquisar músicas
-            </Link>
-          </div>
-          <div className="header-link">
-            <Link
-              className="link-decoration"
-              data-testid="link-to-profile"
-              to="/profile">Visualizar Perfil
-            </Link>
-          </div>
+          <Link
+            className="link-decoration"
+            data-testid="link-to-favorites"
+            to="/favorites">Músicas favoritas
+          </Link>
+          <Link
+            className="link-decoration"
+            data-testid="link-to-search"
+            to="/search">Pesquisar músicas
+          </Link>
+          <Link
+            className="link-decoration"
+            data-testid="link-to-profile"
+            to="/profile">Visualizar Perfil
+          </Link>
         </div>
       </header>
     );
