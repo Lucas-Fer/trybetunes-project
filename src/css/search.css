@@ -1,0 +1,38 @@
+.search-music {
+  display: flex;
+  justify-content: center;
+  margin: 06%;
+}
+
+.input-value-search {
+  padding: 12px 16px;
+  margin-right: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 280px;
+  height: 30px;
+  text-align: center;
+}
+
+.input-button-search {
+  transition: all .4s;
+  border-radius: 25px;
+  background-color: #fff;
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: #9152f8;
+  font-weight: bolder;
+  font-size: medium;
+  opacity: 0.8;
+}
+
+.input-button-search:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.message-result {
+  font-weight: bolder;
+  color: #ffff;
+}

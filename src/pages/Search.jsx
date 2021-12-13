@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as searchApi from '../services/searchAlbumsAPI';
 import LoadingMessage from '../components/LoadingMessage';
 import AlbumCard from '../components/AlbumCard';
+import '../css/search.css';
 
 export default class Search extends Component {
   constructor() {
@@ -23,7 +24,7 @@ export default class Search extends Component {
     this.setState({ inputValue: value }, () => (
       value.length >= 2 ? this
         .setState({ isDisable: false }) : this
-        .setState({ isDisable: true })
+          .setState({ isDisable: true })
     ));
   }
 
@@ -60,29 +61,31 @@ export default class Search extends Component {
       loading,
       allData,
     },
-    handleChange,
-    handleClick,
+      handleChange,
+      handleClick,
     } = this;
     return (
       <div>
         {!loading ? (
-          <div data-testid="page-search">
+          <div className='search-music' data-testid="page-search">
             <label htmlFor="inputValue">
               <input
+                placeholder='Nome do artista'
                 data-testid="search-artist-input"
                 type="text"
                 name="nameArtist"
                 id="inputValue"
-                onChange={ handleChange }
-                value={ inputValue }
-
+                onChange={handleChange}
+                value={inputValue}
+                className='input-value-search'
               />
             </label>
             <button
-              disabled={ isDisable }
+              disabled={isDisable}
               data-testid="search-artist-button"
               type="button"
-              onClick={ handleClick }
+              onClick={handleClick}
+              className='input-button-search'
             >
               Pesquisar
 
@@ -90,10 +93,9 @@ export default class Search extends Component {
           </div>
         ) : (<LoadingMessage />)}
 
-        <div>
-          {/* <p>{`Resultado de álbuns de: ${inputValue}`}</p> */}
-          <p>{messageResult}</p>
-          <AlbumCard allData={ allData } />
+        <div className='album-content'>
+          <h1 className='message-result'>{messageResult}</h1>
+          <AlbumCard allData={allData} />
         </div>
       </div>
     );

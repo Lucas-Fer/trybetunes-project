@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../css/albumCard.css';
 
 export default class AlbumCard extends Component {
   render() {
@@ -8,19 +9,26 @@ export default class AlbumCard extends Component {
     // console.log(allData);
     return (
       <main>
-        <h2>Lista de álbuns</h2>
+        {allData.map(({ artistName, collectionId, collectionName, artworkUrl100 }) => (
+          <div
+            className='album-card-results'
+            key={collectionId}>
+            <img
+              className='album-card-image'
+              src={artworkUrl100}
+              alt="test" />
+            <h3 className='name-artist'>{artistName}</h3>
+            <h4>{collectionName}</h4>
+            <h4 className='link-album'>
+              <Link
+                className='link-text'
+                data-testid={`link-to-album-${collectionId}`}
+                to={`/album/${collectionId}`}
+              >
+                Página do álbum
 
-        {allData.map(({ artistName, collectionId, collectionName }) => (
-          <div key={ collectionId }>
-            <h4>{artistName}</h4>
-            <span>{collectionName}</span>
-            <Link
-              data-testid={ `link-to-album-${collectionId}` }
-              to={ `/album/${collectionId}` }
-            >
-              Página do álbum
-
-            </Link>
+              </Link>
+            </h4>
           </div>
         ))}
       </main>
