@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import LoadingMessage from '../components/LoadingMessage';
+import '../css/login.css'
 
 import * as userApi from '../services/userAPI';
-
+import '../css/login.css'
 export default class Login extends Component {
   constructor() {
     super();
@@ -50,12 +51,16 @@ export default class Login extends Component {
       }, handleInputValue, handleUserApi } = this;
 
     return (
-      <form data-testid="page-login">
+      <form className='wrap-login100' data-testid="page-login">
         {loading && <LoadingMessage />}
         {userLogin && <Redirect to="/search" />}
-        <div>
+        <div className='form-content'>
+          <h2>LOG  IN</h2>
           <label htmlFor="login-name-input">
             <input
+              minLength={3}
+              required
+              placeholder='Insira seu nome'
               data-testid="login-name-input"
               type="text"
               name="inputText"
