@@ -18,7 +18,7 @@ export default class AlbumCard extends Component {
               src={artworkUrl100}
               alt="test" />
             <h3 className='name-artist'>{artistName}</h3>
-            <h4>{collectionName}</h4>
+            <h4 className='album-description'>{collectionName}</h4>
             <h4 className='link-album'>
               <Link
                 className='link-text'

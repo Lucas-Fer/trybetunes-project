@@ -27,6 +27,17 @@ main {
 
 .name-artist {
   font-size: 24px;
+  text-align: center;
+  color: #FFFF;
+  font-weight: bolder;
+}
+
+.album-description {
+  text-align: center;
+  margin-top: 1px;
+  padding: 10px;
+  font-weight: lighter;
+  font-size: 18px;
 }
 
 .album-card-image {
