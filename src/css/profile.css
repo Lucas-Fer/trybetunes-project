@@ -1,0 +1,49 @@
+#section-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid orange;
+  border-radius: 20px; 
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 800px;
+  background-color: #9152f8;
+  color: #FFFF;
+  font-weight: bolder;
+}
+
+.title-info-profile {
+  color: black;
+}
+
+#link-section {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Epilogue, sans-serif;
+  width: 50%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.info-section {
+  margin-top: 40px;
+  font-family: Epilogue, sans-serif;
+  width: 50%;
+}
+
+.info-section-describe {
+  margin-top: 40px;
+  font-family: Epilogue, sans-serif;
+  width: 50%;
+  height: 400px;
+}
+
+#link-edit {
+  color: #FFFF;
+  text-decoration: underline;
+  font-size: larger; 
+}

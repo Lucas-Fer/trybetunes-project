@@ -3,7 +3,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: Poppins-Medium;
+  font-family: Poppins-Medium, Epilogue, sans-serif;
   color: #FFFF; 
 }
 

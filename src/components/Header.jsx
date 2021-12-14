@@ -34,7 +34,7 @@ export default class Header extends Component {
   }
 
   handleNotImage = () => {
-    const noImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEVdufczZfY6ufE_-iVlv-fQh_jRY7f2c-3Q&usqp=CAU'
+    const noImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWkz_42YTg_DMYNnFCqfxjuOSkZBQrn0-c8g&usqp=CAU'
     this.setState({image: noImage})
   }
 
