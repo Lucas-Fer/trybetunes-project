@@ -70,7 +70,7 @@ export default class Profile extends Component {
             </div>
 
             <div className='info-section-describe'>
-              <h2 className='title-info-profile'>Descrição</h2>
+              <h2 className='title-info-profile'>Gênero Favorito</h2>
               {userDescription.length ? <span>{userDescription}</span> : <span>Edite seu perfil e acrescente uma descrição :)</span>}
             </div>
           </section>

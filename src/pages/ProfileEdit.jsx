@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import LoadingMessage from '../components/LoadingMessage';
 import { getUser, updateUser } from '../services/userAPI';
 
+import '../css/profileEdit.css';
+
 export default class ProfileEdit extends Component {
   constructor() {
     super();
@@ -24,16 +26,14 @@ export default class ProfileEdit extends Component {
     this.handleUserInfo();
   }
 
-  componentWillUnmount() {
-    // this.setState({ infoSaved: false });
-  }
-
   handleUserInfo = () => {
     this.setState({ loading: true }, () => {
       getUser().then((user) => this
         .setState({ user, loading: false }));
     });
   };
+
+
 
   validation = () => {
     const { user: { name, email, description, image } } = this.state;
@@ -50,7 +50,7 @@ export default class ProfileEdit extends Component {
     } else {
       this.setState({ buttonDisable: true });
     }
-  }
+  };
 
   handleChange = ({ target }) => {
     const { value, name } = target;
@@ -64,7 +64,7 @@ export default class ProfileEdit extends Component {
     const { user } = this.state;
     this.setState({ infoSaved: true });
     updateUser(user);
-  }
+  };
 
   render() {
     const {
@@ -85,50 +85,66 @@ export default class ProfileEdit extends Component {
       onSaveClick } = this;
     return (
       <div data-testid="page-profile-edit">
-        Profile Edit Page
+        <h1 style={{ textAlign: 'center' }}>Edite suas informações</h1>
         {infoSaved && <Redirect to="/profile" />}
         {loading ? (<LoadingMessage />) : (
-          <form>
+          <form id='form-section'>
 
-            <div>
+            <div id='section-imagem-url'>
+              <img
+                className='user-logo'
+                data-testid="profile-image"
+                src={image}
+                alt="sem foto de perfil"
+              />
               <input
-                value={ image }
+                placeholder='Insira a url de uma imagem'
+                className='input-values-profile-url'
+                value={image}
                 type="text"
                 data-testid="edit-input-image"
-                onChange={ handleChange }
+                onChange={handleChange}
                 name="image"
               />
             </div>
 
             <label htmlFor="inputName">
+              <h2 className='title-edit-profile'>Nome</h2>
               <input
-                value={ name }
+                className='input-values-profile'
+                value={name}
                 data-testid="edit-input-name"
                 type="text"
                 id="inputName"
-                onChange={ handleChange }
+                onChange={handleChange}
                 name="name"
               />
             </label>
 
             <label htmlFor="inputEmail">
+              <h2 className='title-edit-profile'>Email</h2>
               <input
-                value={ email }
+                placeholder='Insira seu email'
+                className='input-values-profile'
+                value={email}
                 data-testid="edit-input-email"
                 type="email"
                 id="inputEmail"
-                onChange={ handleChange }
+                onChange={handleChange}
                 name="email"
               />
             </label>
 
             <label htmlFor="inputDescription">
+              <h2 className='title-edit-profile'>Gênero Favorito</h2>
               <input
-                value={ description }
+                placeholder='Insira uma descrição'
+                className='input-values-profile'
+                value={description}
                 data-testid="edit-input-description"
                 type="text"
                 id="inputDescription"
-                onChange={ handleChange }
+                onChange={handleChange}
                 name="description"
               />
             </label>
@@ -136,8 +152,9 @@ export default class ProfileEdit extends Component {
             <button
               data-testid="edit-button-save"
               type="submit"
-              disabled={ buttonDisable }
-              onClick={ onSaveClick }
+              id="save-button"
+              disabled={buttonDisable}
+              onClick={onSaveClick}
             >
               Salvar
 
