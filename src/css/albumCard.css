@@ -10,7 +10,7 @@ main {
 .album-card-results {
   min-width: 350px;
   max-width: 350px;
-  min-height: 400px;
+  min-height: 450px;
   margin: 20px 10px;
   display:  flex;
   align-items: center;
