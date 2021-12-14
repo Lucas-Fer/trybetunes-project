@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../css/albumCard.css';
-
+import thumbnail from '../images/album-capa.png'; 
+  
 export default class AlbumCard extends Component {
   render() {
     const { allData } = this.props;
-    // console.log(allData);
     return (
       <main>
-        {allData.map(({ artistName, collectionId, collectionName, artworkUrl100 }) => (
+        {allData.map(({ artistName, collectionId, collectionName }) => (
           <div
             className='album-card-results'
             key={collectionId}>
             <img
               className='album-card-image'
-              src={artworkUrl100}
-              alt="test" />
+              src={thumbnail}
+              alt="thumbnail-padrãos" />
             <h3 className='name-artist'>{artistName}</h3>
             <h4 className='album-description'>{collectionName}</h4>
             <h4 className='link-album'>
