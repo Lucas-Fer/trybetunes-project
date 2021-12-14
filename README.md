@@ -1,5 +1,5 @@
 # Projeto TrybeTunes 🎵
-  [CSS em andamento]
+  [Ainda não 100% responsivo]
 ## O que foi desenvolvido 💻 
 
 Neste projeto desenvolvi o TrybeTunes, uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação será capaz de:
