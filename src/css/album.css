@@ -19,3 +19,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+#description-musicCard {
+  color: #7209b7;
+  font-weight: bolder;
+  font-size: x-large;
+}

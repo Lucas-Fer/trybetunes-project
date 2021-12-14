@@ -36,15 +36,14 @@ export default class Profile extends Component {
   render() {
     const { state: { loading, userName, userEmail, userDescription, userImage } } = this;
     return (
-      <div data-testid="page-profile">
-        Profile Page.
+      <div id="section-profile" data-testid="page-profile">
+        <h1>Seu perfil</h1>
         {loading ? (<LoadingMessage />) : (
           <section>
-
             <div>
               <img
                 data-testid="profile-image"
-                src={ userImage }
+                src={userImage}
                 alt="foto-perfil"
               />
               <Link to="profile/edit">Editar perfil</Link>

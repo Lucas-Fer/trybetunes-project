@@ -44,7 +44,7 @@ export default class Album extends Component {
             src={thumbnail}
             alt="thumbnail-padrão" />
           <h3 data-testid="artist-name">{albumArtistName}</h3>
-          <p data-testid="album-name">{collectionName}</p>
+          <p id="description-musicCard" data-testid="album-name">{collectionName}</p>
         </div>
 
         <div className='music-preview-section'>
