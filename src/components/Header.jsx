@@ -20,9 +20,9 @@ export default class Header extends Component {
     this.handleMount();
   }
 
-  // componentDidUpdate() {
-  //   this.handleMount();
-  // }
+  componentDidUpdate() {
+    this.handleMount();
+  }
 
   handleMount = () => {
     userApi.getUser()
